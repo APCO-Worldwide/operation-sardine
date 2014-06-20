@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Operation Sardine</title>
+		<link rel="stylesheet" href="main.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#red_on').click(function() {
+					$.post("/red/on", function(data) {
+					});
+				});
+
+				$('#green_on').click(function() {
+					$.post("/green/on", function(data) {
+					});
+				});
+
+				$('#off').click(function() {
+					$.post("/all/off", function(data) {
+					});
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<button id="red_on">Turn Red On</button>
+		<button id="green_on">Turn Green On</button>
+		<button id="off">Turn Off</button>
+	</body>
+</html>
