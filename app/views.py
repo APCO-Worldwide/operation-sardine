@@ -8,18 +8,12 @@ ser = serial.Serial('/dev/ttyACM0', 9600)
 def index():
 	return send_file("index.html")
 
-@app.route('/green/on', methods=['POST'])
-def turn_red_on():
+@app.route('/on', methods=['POST'])
+def turn_on():
 	ser.write(b'1')
 	return ""
 
-@app.route('/red/on', methods=['POST'])
-def turn_green_on():
-	ser.write(b'2')
-	return ""
-
-@app.route('/all/off', methods=['POST'])
+@app.route('/off', methods=['POST'])
 def turn_off():
-	ser.write(b'3')
+	ser.write(b'0')
 	return ""
-
